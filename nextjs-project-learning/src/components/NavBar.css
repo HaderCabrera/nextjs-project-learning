@@ -1,5 +1,5 @@
 .navbar {
-    background: blueviolet;
+    background: transparent;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -11,3 +11,4 @@
     display: flex;
     gap: 1rem;
 }
+

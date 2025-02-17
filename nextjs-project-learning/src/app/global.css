@@ -1,22 +1,25 @@
 /* Definición de variables para modo claro */
 :root {
-  --background: #ededed; /* Fondo claro */
+  --background: linear-gradient(90deg, #532874 10%,#19152c 90%);
   --foreground: #19152c; /* Texto oscuro */
   --primary: #532874; /* Color principal (morado) */
   --secondary: #6bc5d1; /* Color secundario (azul claro) */
   --accent: #6dbd8f; /* Color de énfasis (verde) */
   --card-background: #ffffff; /* Fondo de tarjetas */
+  --button: #6dbd8f;
 }
 
 /* Definición de variables para modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #19152c; /* Fondo oscuro */
+    --background: linear-gradient(90deg, #19152c 40%,#532874 70%, #19152c 100%);
+    --background-attachment: fixed; /* Fija el gradiente para que no se mueva al hacer scroll */
     --foreground: #ededed; /* Texto claro */
     --primary: #6dbd8f; /* Verde como color principal en modo oscuro */
     --secondary: #6bc5d1; /* Azul claro sigue siendo secundario */
-    --accent: #532874; /* Morado como énfasis en modo oscuro */
+    --accent: #6dbd8f; /* Morado como énfasis en modo oscuro */
     --card-background: #0a0a0a; /* Fondo oscuro para tarjetas */
+    --button: #6dbd8f;
   }
 }
 
@@ -29,6 +32,7 @@ body {
   padding: 0;
   transition: background 0.3s ease, color 0.3s ease; /* Transición suave entre modos */
 }
+
 
 h1, h2, h3 {
   color: var(--foreground); /* Títulos usan el color del texto */
@@ -62,7 +66,7 @@ a:hover {
 
 /* Botones */
 button, .btn {
-  background-color: var(--primary); /* Botones usan el color principal */
+  background-color: var(--button); /* Botones usan el color principal */
   color: var(--foreground); /* Texto claro u oscuro según el modo */
   border: none;
   padding: 10px 20px;
@@ -72,7 +76,7 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: var(--accent); /* Cambio al color de énfasis al pasar el ratón */
+  opacity: 0.9;
 }
 
 /* Resaltado */
