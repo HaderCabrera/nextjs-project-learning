@@ -1,0 +1,7 @@
+.grid {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Define 3 columnas de igual ancho */
+    gap: 20px; /* Espacio entre los elementos del grid */
+
+}

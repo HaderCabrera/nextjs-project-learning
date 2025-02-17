@@ -1,0 +1,101 @@
+/* Definición de variables para modo claro */
+:root {
+  --background: #ededed; /* Fondo claro */
+  --foreground: #19152c; /* Texto oscuro */
+  --primary: #532874; /* Color principal (morado) */
+  --secondary: #6bc5d1; /* Color secundario (azul claro) */
+  --accent: #6dbd8f; /* Color de énfasis (verde) */
+  --card-background: #ffffff; /* Fondo de tarjetas */
+}
+
+/* Definición de variables para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #19152c; /* Fondo oscuro */
+    --foreground: #ededed; /* Texto claro */
+    --primary: #6dbd8f; /* Verde como color principal en modo oscuro */
+    --secondary: #6bc5d1; /* Azul claro sigue siendo secundario */
+    --accent: #532874; /* Morado como énfasis en modo oscuro */
+    --card-background: #0a0a0a; /* Fondo oscuro para tarjetas */
+  }
+}
+
+/* Estilos generales */
+body {
+  color: var(--foreground); /* Color del texto */
+  background: var(--background); /* Fondo general */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease; /* Transición suave entre modos */
+}
+
+h1, h2, h3 {
+  color: var(--foreground); /* Títulos usan el color del texto */
+  text-align: center;
+}
+
+p {
+  color: var(--secondary); /* Texto secundario usa el color azul claro */
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent); /* Enlaces usan el color de énfasis */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tarjetas */
+.card {
+  background-color: var(--card-background); /* Fondo de las tarjetas */
+  border: 1px solid var(--secondary); /* Borde azul claro */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+/* Botones */
+button, .btn {
+  background-color: var(--primary); /* Botones usan el color principal */
+  color: var(--foreground); /* Texto claro u oscuro según el modo */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--accent); /* Cambio al color de énfasis al pasar el ratón */
+}
+
+/* Resaltado */
+.highlight {
+  background-color: var(--secondary); /* Fondo azul claro para resaltar */
+  color: var(--foreground); /* Texto claro u oscuro según el modo */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Contenedor Principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary); /* Fondo morado o verde según el modo */
+  color: var(--foreground); /* Texto claro u oscuro según el modo */
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
